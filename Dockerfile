@@ -10,8 +10,10 @@ RUN apt-get update && \
   rm -rf /var/lib/apt/lists/*
 
 RUN curl -o WeCenter_3-1-4.zip -SL http://www.wecenter.com/download/WeCenter_3-1-4.zip \
-    && unzip WeCenter_3-1-4.zip 
-    && mv WeCenter_3-1-4/UPLOAD/*  /app
+    && unzip WeCenter_3-1-4.zip \
+    && mv WeCenter_3-1-4/UPLOAD/*  /app \
+    && rm -rf WeCenter_3-1-4/* \
+    && rm -rf WeCenter_3-1-4.zip
     
 # Modify permissions to allow plugin upload
 RUN chown -R www-data:www-data /app/system
