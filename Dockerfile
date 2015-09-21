@@ -5,6 +5,7 @@ MAINTAINER TenxCloud
 # Install plugins
 RUN apt-get update && \
   apt-get -y install php5-gd && \
+  apt-get -y install curl && \
   rm -rf /var/lib/apt/lists/*
 
 RUN curl -o WeCenter_3-1-4.zip -SL http://www.wecenter.com/download/WeCenter_3-1-4.zip \
