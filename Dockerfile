@@ -5,6 +5,7 @@ MAINTAINER TenxCloud
 # Install plugins
 RUN apt-get update && \
   apt-get -y install php5-gd && \
+  apt-get -y install php5-curl && \
   apt-get -y install curl && \
   apt-get -y install unzip && \
   rm -rf /var/lib/apt/lists/*
