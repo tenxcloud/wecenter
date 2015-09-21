@@ -7,11 +7,6 @@ RUN apt-get update && \
   apt-get -y install php5-gd && \
   rm -rf /var/lib/apt/lists/*
 
-# Download latest version of Wordpress into /app
-RUN rm -fr /app && wget http://www.wecenter.com/download/WeCenter_3-1-4.zip
-RUN mv WeCenter_3-1-4/UPLOAD/*  /app
-
-
 RUN curl -o WeCenter_3-1-4.zip -SL http://www.wecenter.com/download/WeCenter_3-1-4.zip \
     && unzip WeCenter_3-1-4.zip 
     && mv WeCenter_3-1-4/UPLOAD/*  /app
