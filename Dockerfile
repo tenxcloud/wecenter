@@ -1,5 +1,5 @@
 
-FROM index.tenxcloud.com/tenxcloud/lamp:latest
+FROM tutum/lamp:latest
 MAINTAINER TenxCloud
 
 # Install plugins
@@ -8,9 +8,14 @@ RUN apt-get update && \
   rm -rf /var/lib/apt/lists/*
 
 # Download latest version of Wordpress into /app
-RUN rm -fr /app && wget http://www.wecenter.com/download/WeCenter_3-1-4.zip && unzip WeCenter_3-1-4.zip 
+RUN rm -fr /app && wget http://www.wecenter.com/download/WeCenter_3-1-4.zip
 RUN mv WeCenter_3-1-4/UPLOAD/*  /app
 
+
+RUN curl -o WeCenter_3-1-4.zip -SL http://www.wecenter.com/download/WeCenter_3-1-4.zip \
+    && unzip WeCenter_3-1-4.zip 
+    && mv WeCenter_3-1-4/UPLOAD/*  /app
+    
 # Modify permissions to allow plugin upload
 RUN chown -R www-data:www-data /app/system
 
