@@ -21,5 +21,6 @@ RUN chown -R www-data:www-data /app/system
 RUN mkdir /app/tmp && mkdir /app/cache && chmod -R 777 /app/tmp && chmod -R 777 /app/cache 
 
 VOLUME  ["/app/uploads"]
+VOLUME  ["/app/system"]
 
 CMD ["/run.sh"]
