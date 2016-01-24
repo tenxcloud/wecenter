@@ -17,9 +17,9 @@ RUN curl -o WeCenter_3-1-4.zip -SL http://www.wecenter.com/download/WeCenter_3-1
     && rm -rf WeCenter_3-1-4.zip
     
 # Modify permissions to allow plugin upload
-RUN chown -R www-data:www-data /app/system
 RUN mkdir /app/tmp && mkdir /app/cache && chmod -R 777 /app/tmp && chmod -R 777 /app/cache 
 
-VOLUME  ["/app/uploads"]
+VOLUME  ["/app/uploads","/app/system"]
+RUN chown -R www-data:www-data /app/system
 
 CMD ["/run.sh"]
