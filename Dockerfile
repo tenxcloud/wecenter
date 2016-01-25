@@ -1,3 +1,6 @@
+# 知识分享系统
+# 使用时速云 [代码构建] 和 [持续集成]
+# Version:1.0.0
 
 FROM tutum/apache-php:latest
 MAINTAINER TenxCloud
