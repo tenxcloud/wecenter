@@ -25,6 +25,6 @@ RUN mkdir /app/tmp && mkdir /app/cache && chmod -R 777 /app/tmp && chmod -R 777 
 RUN mv /app/system /app/system_bak
 VOLUME  ["/app/uploads","/app/system"]
 RUN chown -R www-data:www-data /app/system
-RUN cp /app/system_bak /app/system
+RUN cp -r /app/system_bak /app/system
 
 CMD ["/run.sh"]
